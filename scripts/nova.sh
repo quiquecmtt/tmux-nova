@@ -142,7 +142,9 @@ fi
 window_status_activity_style_bg=$(get_option "@nova-window-status-activity-style-bg" "#44475a")
 window_status_activity_style_fg=$(get_option "@nova-window-status-activity-style-fg" "#bd93f9")
 
-tmux set-window-option -g window-status-format "#{?window_activity_flag,#[fg=$window_status_activity_style_bg]#[bg=$window_status_activity_style_fg],#[fg=$status_style_fg]#[bg=$status_style_bg]}"
+tmux set-window-option -g window-status-format "#{?window_activity_flag,"
+tmux set-window-option -ga window-status-format "#[fg=$window_status_activity_style_bg]#[bg=$window_status_activity_style_fg],"
+tmux set-window-option -ga window-status-format "#[fg=$status_style_fg]#[bg=$status_style_bg]}"
 
 if [ $nerdfonts = true ]; then
   tmux set-window-option -ga window-status-format "$(padding $(($padding + 1)))"
