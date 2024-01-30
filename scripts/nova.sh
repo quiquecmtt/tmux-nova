@@ -139,8 +139,8 @@ fi
 # window-status-activity-style
 #
 
-window_status_activity_style_bg=$(get_option "@nova-window-status-active-style-bg" "#44475a")
-window_status_activity_style_fg=$(get_option "@nova-window-status-active-style-fg" "#bd93f9")
+window_status_activity_style_bg=$(get_option "@nova-window-status-activity-style-bg" "#44475a")
+window_status_activity_style_fg=$(get_option "@nova-window-status-activity-style-fg" "#bd93f9")
 
 tmux set-window-option -g window-status-format "#{?window_activity_flag,#[fg=$window_status_activity_style_bg]#[bg=$window_status_activity_style_fg],#[fg=$status_style_fg]#[bg=$status_style_bg]}"
 
